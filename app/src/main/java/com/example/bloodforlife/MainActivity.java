@@ -39,18 +39,11 @@ public class MainActivity extends AppCompatActivity {
                 String password=etPassword.getText().toString();
                 String phone=etPhone.getText().toString();
 
-
-
-
-
+                Profile profile=new Profile(name,Email,bloodGroup,password,phone);
+                reference.child(phone).setValue(profile);
 
             }
         });
-
-
-
-
-
 
 
     }
