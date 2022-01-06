@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#6FBCFF"
+    android:background="@drawable/cut_card_bg_2"
     tools:context=".Login">
 
     <TextView
@@ -21,7 +21,8 @@
         android:layout_height="wrap_content"
         android:text="Login"
         android:fontFamily="sans-serif"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
         android:textSize="30sp"
         android:gravity="center"
         />
