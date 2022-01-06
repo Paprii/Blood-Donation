@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -40,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Profile profile=new Profile(name,Email,bloodGroup,password,phone);
                 reference.child(phone).setValue(profile);
+
+                Toast.makeText(MainActivity.this,"Successfully Registered",Toast.LENGTH_SHORT).show();
 
             }
         });
