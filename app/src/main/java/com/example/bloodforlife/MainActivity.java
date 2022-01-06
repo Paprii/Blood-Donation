@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 rootNode=FirebaseDatabase.getInstance();
                 reference=rootNode.getReference("Donors");
-                reference.setValue("first data stored");
                 String name=etName.getText().toString();
                 String bloodGroup=etBloodGroup.getText().toString();
                 String Email=etEmail.getText().toString();
@@ -44,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Login.class));
+            }
+        });
+
 
 
     }
