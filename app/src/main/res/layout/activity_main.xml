@@ -69,7 +69,7 @@
         android:layout_marginTop="20dp"
         android:text="Register"
         android:textAllCaps="true"
-        android:background="@color/black"
+        android:background="@drawable/btn_bg"
         android:textColor="#000000"/>
 
     <Button
@@ -79,7 +79,7 @@
         android:layout_marginTop="20dp"
         android:text="Login"
         android:textAllCaps="true"
-        android:background="@color/black"
+        android:background="@drawable/btn_bg"
         android:textColor="#000000"/>
 
 
