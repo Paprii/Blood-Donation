@@ -21,6 +21,10 @@ public class Profile {
      */
     String bloodGroup;
     /**
+     * Puts Weight of the Donor interested for the registration into the DB
+     */
+    String weight;
+    /**
      * Puts Contact Number of the Donor interested for the registration into the DB
      */
     String phone;
@@ -40,10 +44,11 @@ public class Profile {
      * @param password   Password of the Donor
      * @param phone      ContactNumber of the Donor
      */
-    public Profile(String name, String email, String bloodGroup, String password, String phone) {
+    public Profile(String name, String email, String bloodGroup,String weight, String password, String phone) {
         this.name = name;
         this.email = email;
         this.bloodGroup = bloodGroup;
+        this.weight=weight;
         this.password = password;
         this.phone = phone;
     }
@@ -101,7 +106,23 @@ public class Profile {
     public void setBloodGroup(String bloodGroup) {
         this.bloodGroup = bloodGroup;
     }
+    /**
+     * Retrieves Donor's Weight from the DB
+     *
+     * @return Donor's Weight
+     */
+    public String getWeight() {
+        return weight;
+    }
 
+    /**
+     * Puts Donor's Weight into the DB
+     *
+     * @param weight Donor's Registered Weight
+     */
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
     /**
      * Retrieves Donor's Contact Number from the DB
      *

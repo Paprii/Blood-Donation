@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
      */
     EditText etPassword;
     /**
+     * The Weight of a Donor
+     */
+    EditText etWeight;
+    /**
      * The ContactNumber of a Donor
      */
     EditText etPhone;
@@ -63,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         etName = findViewById(R.id.activity_main_et_name);
         etBloodGroup = findViewById(R.id.activity_main_et_bloodgroup);
+        etWeight = findViewById(R.id.activity_main_et_weight);
         etEmail = findViewById(R.id.activity_main_et_email);
         etPassword = findViewById(R.id.activity_main_et_password);
         etPhone = findViewById(R.id.activity_main_et_phonenumber);
@@ -78,14 +83,22 @@ public class MainActivity extends AppCompatActivity {
                 reference = rootNode.getReference("Donors");
                 String name = etName.getText().toString();
                 String bloodGroup = etBloodGroup.getText().toString();
+                String weight = etWeight.getText().toString();
                 String Email = etEmail.getText().toString();
                 String password = etPassword.getText().toString();
                 String phone = etPhone.getText().toString();
 
-                Profile profile = new Profile(name, Email, bloodGroup, password, phone);
-                reference.child(phone).setValue(profile);
+                Integer w=Integer.valueOf(weight);
+                if (w > 50) {
+                    Profile profile = new Profile(name, Email, bloodGroup, weight, password, phone);
+                    reference.child(phone).setValue(profile);
 
-                Toast.makeText(MainActivity.this, "Successfully Registered", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Successfully Registered", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(MainActivity.this, "Under-Weight", Toast.LENGTH_SHORT).show();
+                }
+
 
             }
         });

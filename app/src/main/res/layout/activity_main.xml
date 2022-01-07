@@ -42,6 +42,12 @@
         android:hint="Blood Group"
         />
     <EditText
+        android:id="@+id/activity_main_et_weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Weight(In Kilogram)"
+        />
+    <EditText
         android:id="@+id/activity_main_et_phonenumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
