@@ -11,12 +11,33 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-
+/**
+ *The main activity for the application "review" feature
+ * @author Rifat Ara
+ * @version 1.0
+ * This is the first screen for the user see
+ */
 public class MainActivity extends AppCompatActivity {
+    /**
+     * Edittext for user to input name
+     */
     EditText etName;
-    EditText etreview;
+    /**
+     * Edittext for user to input review
+     */
+    EditText etReview;
+    /**
+     * Button for submit
+     */
     Button btnSubmit;
+    /**
+     * FirebaseDatabase object
+     */
     FirebaseDatabase rootNode;
+
+    /**
+     * DatabaseReference object
+     */
     DatabaseReference profileDbRef;
 
     @Override
@@ -25,12 +46,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         etName=findViewById(R.id.activity_main_et_name);
-        etreview=findViewById(R.id.activity_main_et_review);
+        etReview=findViewById(R.id.activity_main_et_review);
         btnSubmit=findViewById(R.id.activity_main_et_submit);
         rootNode=FirebaseDatabase.getInstance();
         profileDbRef= rootNode.getReference().child("Profile");
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Call Function "InsertReview()"
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 insertReview();
@@ -41,19 +66,37 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This method is called when user click "submit" Button
+     */
     private void insertReview(){
-        String name=etName.getText().toString();//store name that we get from user in the edit text names'pname'
-        String review= etreview.getText().toString(); //store name that we get from user in the edit text names'reviews'
+        /**
+         * store name that we get from user in the edit text names'pname'
+         */
+        String name=etName.getText().toString();
+        /**
+         * store name that we get from user in the edit text names'reviews'
+         */
+        String review= etReview.getText().toString();
 
 
+        /**
+         * Sending Data throw  'name' and 'review' object
+         */
+        profile profile=new profile(name,review);
 
-        profile profile=new profile(name,review);//Sending Data throw object
+        /**
+         * Using push method to pass the value of  'profile' object to the firebase database
+         *  'Push' method helps to create unique id,,otherwise data would overwritted
+         */
 
-        profileDbRef.push().setValue(profile);// Using push method to pass the value of object'profile' to the firebase
-        // database,,it helps to create unique id,,otherwise data would overwritrd
+        profileDbRef.push().setValue(profile);
+        /**
+         * Showing Toast on submitting data
+          */
+
         Toast.makeText(this,"Data Inserted!",Toast.LENGTH_SHORT).show();
 
     }
-
 
 }
