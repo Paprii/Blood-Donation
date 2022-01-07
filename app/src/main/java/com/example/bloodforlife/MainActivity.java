@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Successfully Registered", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(MainActivity.this, "Under-Weight", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Weight Must be Above 5 KG", Toast.LENGTH_SHORT).show();
                 }
 
 
