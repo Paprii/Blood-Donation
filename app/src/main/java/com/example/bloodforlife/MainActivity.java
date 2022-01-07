@@ -84,32 +84,41 @@ public class MainActivity extends AppCompatActivity {
                 String name = etName.getText().toString();
                 String bloodGroup = etBloodGroup.getText().toString();
                 String weight = etWeight.getText().toString();
-                String Email = etEmail.getText().toString();
+                String email = etEmail.getText().toString();
                 String password = etPassword.getText().toString();
                 String phone = etPhone.getText().toString();
 
-                Integer w=Integer.valueOf(weight);
-                if (w > 50) {
-                    Profile profile = new Profile(name, Email, bloodGroup, weight, password, phone);
-                    reference.child(phone).setValue(profile);
-
-                    Toast.makeText(MainActivity.this, "Successfully Registered", Toast.LENGTH_SHORT).show();
+                Integer weightInteger = Integer.valueOf(weight);
+                if (weightInteger > 50) {
+                    if (name.length() != 0 && password.length() != 0 && bloodGroup.length() != 0 && email.length() != 0) {
+                        Profile profile = new Profile(name, email, bloodGroup, weight, password, phone);
+                        reference.child(phone).setValue(profile);
+                        Toast.makeText(MainActivity.this, "Successfully Registered", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(MainActivity.this, "Field Is Empty", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else{
-                    Toast.makeText(MainActivity.this, "Weight Must be Above 5 KG", Toast.LENGTH_SHORT).show();
-                }
 
+                else
 
+            {
+                Toast.makeText(MainActivity.this, "Weight Must be Above 50 KG", Toast.LENGTH_SHORT).show();
             }
-        });
-
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Login.class));
-            }
-        });
 
 
+        }
+    });
+
+        btnLogin.setOnClickListener(new View.OnClickListener()
+
+    {
+        @Override
+        public void onClick (View v){
+        startActivity(new Intent(MainActivity.this, Login.class));
     }
+    });
+
+
+}
 }
