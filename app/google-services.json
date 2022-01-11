@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1031356312131",
+    "project_id": "blood-for-life-6a963",
+    "storage_bucket": "blood-for-life-6a963.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031356312131:android:f45e99a42a338b167442f6",
+        "android_client_info": {
+          "package_name": "com.example.bfl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1031356312131-j8jfi9q06ik8ciated5fot3thi8uh23s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6P-TlEXp02c1E6thD7Ma0A2d2-lSs55U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1031356312131-j8jfi9q06ik8ciated5fot3thi8uh23s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
