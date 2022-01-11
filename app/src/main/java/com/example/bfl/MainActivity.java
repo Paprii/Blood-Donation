@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.AdapterView;
+import java.util.ArrayList;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
      * Field for selecting Table to save Donor data in Firebase DB
      */
     DatabaseReference reference;
+    AutoCompleteTextView acvBloodGroup;
 
     /**
      * Saves the given data by a Donor in DB
@@ -64,12 +69,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         etName = findViewById(R.id.activity_main_et_name);
         etBloodGroup = findViewById(R.id.activity_main_et_bloodgroup);
+        acvBloodGroup= findViewById(R.id.activity_main_acv_bloodgroup);
         etWeight = findViewById(R.id.activity_main_et_weight);
         etEmail = findViewById(R.id.activity_main_et_email);
         etPassword = findViewById(R.id.activity_main_et_password);
         etPhone = findViewById(R.id.activity_main_et_phonenumber);
         btnLogin = findViewById(R.id.activity_main_btn_login);
         btnRegister = findViewById(R.id.activity_main_btn_register);
+
+        ArrayAdapter adapter=new ArrayAdapter(this, android.R.layout.simple_list_item_1,BLOODGROUPS);
+        acvBloodGroup.setAdapter(adapter);
+
 
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 rootNode = FirebaseDatabase.getInstance();
                 reference = rootNode.getReference("Donors");
                 String name = etName.getText().toString();
-                String bloodGroup = etBloodGroup.getText().toString();
+                String bloodGroup = acvBloodGroup.getText().toString();
                 String weight = etWeight.getText().toString();
                 String email = etEmail.getText().toString();
                 String password = etPassword.getText().toString();
@@ -87,8 +97,10 @@ public class MainActivity extends AppCompatActivity {
                 Integer weightInteger = Integer.valueOf(weight);
 
 
+
+
                 if (weightInteger > 50) {
-                    if (name.length() != 0 && password.length() != 0 && bloodGroup.length() != 0 && email.length() != 0) {
+                    if (name.length() != 0 && password.length() != 0 && acvBloodGroup.length() != 0 && email.length() != 0) {
 
                         Profile profile = new Profile(name, email, bloodGroup, weight, password, phone);
                         reference.child(phone).setValue(profile);
@@ -117,4 +129,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    private static final String[] BLOODGROUPS = new String[] {
+            "A+", "AB+", "B+", "O+","A-","B-","AB-","O-"
+    };
 }

@@ -19,7 +19,6 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-
 public class Search extends AppCompatActivity {
     DatabaseReference dbReference;
     private ListView listData;
@@ -46,7 +45,7 @@ public class Search extends AppCompatActivity {
         dbReference.addListenerForSingleValueEvent(event);
     }
     private static final String[] NAMES = new String[] {
-            "A+", "AB+", "B+", "O+","A-","B-","AB-","O-","a+", "ab+", "b+", "o+","a-","b-","ab-","o-"
+            "A+", "AB+", "B+", "O+","A-","B-","AB-","O-"
     };
     private void populateSearch(DataSnapshot snapshot) {
         ArrayList<String> names=new ArrayList<>();

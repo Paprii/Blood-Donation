@@ -4,7 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/teal_200"
     tools:context=".Search">
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search By BloodGroup"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:gravity="center"
+        />
     <AutoCompleteTextView
         android:id="@+id/activity_search_acv_autocomplete"
         android:layout_width="match_parent"

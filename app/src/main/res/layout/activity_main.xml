@@ -34,12 +34,14 @@
         android:layout_height="wrap_content"
         android:hint="Name"
         />
-    <EditText
-        android:id="@+id/activity_main_et_bloodgroup"
+    <AutoCompleteTextView
+        android:id="@+id/activity_main_acv_bloodgroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Blood Group"
-        />
+        android:hint="BloodGroup">
+
+    </AutoCompleteTextView>
+
     <EditText
         android:id="@+id/activity_main_et_weight"
         android:layout_width="match_parent"
