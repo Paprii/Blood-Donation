@@ -50,6 +50,14 @@ public class Profile {
         this.phone = phone;
     }
 
+    public Profile(String name, String bloodGroup, String phone, String email,String weight) {
+        this.name = name;
+        this.email = email;
+        this.bloodGroup = bloodGroup;
+        this.weight=weight;
+        this.phone = phone;
+    }
+
     /**
      * Retrieves Donor's Name from the DB
      *
