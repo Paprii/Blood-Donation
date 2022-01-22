@@ -1,0 +1,22 @@
+<resources>
+    <!--All the string resources come here including Questions and title -->
+    <string name="app_name">Blood for Life | Frequent questions about before and after Blood donation</string>
+    <string name="correct"><b>CORRECTNESS IS</b> \n
+        <b>%1$d</b> OUT OF 6</string>
+    <string name="true_text">true</string>
+    <string name="false_text">false</string>
+    <string name="correct_answer">That\'s correct</string>
+    <string name="wrong_answer">That\'s incorrect</string>
+    <string name="a">You have finished your period stage. so, now you can donate blood.</string>
+    <string name="b">After donating blood \n \t
+        <b>Byou took rest for at least 15 minutes.</b>\n \t
+        <b>Hyou didn't took rest.</b></string>
+    <string name="c">Did You finished compulsory medical tests?\n \t
+        <b>Lyes!!!</b></string>
+    <string name="d">Do You Think blood donation can save one;s life? <b>obviously</b></string>
+    <string name="e">Are you suffering from fever and weakness after donating blood?</string>
+    <string name="f">Do you feel nausea and tired?</string>
+    <string name="next_text">next</string>
+    <string name="prev_text">previous</string>
+
+</resources>
