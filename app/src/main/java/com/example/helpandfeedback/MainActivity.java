@@ -68,7 +68,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     *    This method is for 'submit' Button<br>
+     * <b>''''''Business Logic'''''<br></b>
+     *
+     *    This Logic work method when 'submit' Button pressed !<br>
      *      Showing Toast if users have not sign up and ask help to the system <br>
      *     If user have not log in to the system she or he can not be able to give feedback <br>
      *     User can search blood instead of not log in to the system but they cannot give any feedback unless they have created accout<br>
