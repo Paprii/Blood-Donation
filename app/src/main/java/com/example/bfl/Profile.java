@@ -1,5 +1,9 @@
 package com.example.bfl;
 
+/**
+ * This class help to set and get data into the database
+ * this class acts like model in this project as it manages data for the database
+ */
 public class Profile {
     /**
      * Puts Name of the Donor interested for the registration into the DB
@@ -50,6 +54,14 @@ public class Profile {
         this.phone = phone;
     }
 
+    /**
+     * This Constructor Initiates Donor's Registration Data into DB
+     * @param name Name of The Donor
+     * @param bloodGroup Bloodgroup of the Donor
+     * @param phone  ContactNumber of the Donor
+     * @param email Email of the Donor
+     * @param weight Weight of the donor
+     */
     public Profile(String name, String bloodGroup, String phone, String email,String weight) {
         this.name = name;
         this.email = email;

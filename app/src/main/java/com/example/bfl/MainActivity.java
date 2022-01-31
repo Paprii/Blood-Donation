@@ -17,7 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 /**
- *
+ *This is the starting activity of our app
  */
 public class MainActivity extends AppCompatActivity {
 
